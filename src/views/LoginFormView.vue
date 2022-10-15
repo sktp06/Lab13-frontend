@@ -59,13 +59,14 @@ export default {
   },
   methods: {
     handleLogin(user) {
-      AuthService.login(user).then((response) => {
-        console.log(response)
-        this.$router.push({ name: 'EventList' })
-      })
-      .catch(() => {
-        this.message = 'could not login'
-      })
+      AuthService.login(user)
+        .then((response) => {
+          console.log(response)
+          this.$router.push({ name: 'EventList' })
+        })
+        .catch(() => {
+          this.message = 'could not login'
+        })
     }
   }
 }
