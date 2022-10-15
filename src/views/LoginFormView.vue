@@ -63,6 +63,9 @@ export default {
         console.log(response)
         this.$router.push({ name: 'EventList' })
       })
+      .catch(() => {
+        this.message = 'could not login'
+      })
     }
   }
 }
