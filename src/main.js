@@ -29,6 +29,6 @@ requireComponent.keys().forEach((fileName) => {
 // app.use(router).provide('GStore', GStore).mount('#app')
 app
   .use(router)
-  .component('font-awesome-icon',FontAwesomeIcon)
+  .component('font-awesome-icon', FontAwesomeIcon)
   .provide('GStore', GStore)
   .mount('#app')
