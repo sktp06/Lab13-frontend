@@ -61,6 +61,7 @@ export default {
     handleLogin(user) {
       AuthService.login(user).then((response) => {
         console.log(response)
+        this.$router.push({ name: 'EventList' })
       })
     }
   }
