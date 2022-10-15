@@ -6,6 +6,9 @@ import 'nprogress/nprogress.css'
 
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { FontAwesomeIcon } from './plugins/font-awesome'
 
 const requireComponent = require.context(
   './components',
@@ -23,4 +26,9 @@ requireComponent.keys().forEach((fileName) => {
   app.component(componentName, componentConfig.default || componentConfig)
 })
 
-app.use(router).provide('GStore', GStore).mount('#app')
+// app.use(router).provide('GStore', GStore).mount('#app')
+app
+  .use(router)
+  .component('font-awesome-icon',FontAwesomeIcon)
+  .provide('GStore', GStore)
+  .mount('#app')
